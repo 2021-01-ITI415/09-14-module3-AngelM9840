@@ -9,6 +9,32 @@ public class PlayerAudio : MonoBehaviour
     public AudioSource audioS;
     public AudioMixerSnapshot idleSnapshot;
     public AudioMixerSnapshot AuxInSnapshot;
+    public AudioMixerSnapshot AmbidleSnapshot;
+    public AudioMixerSnapshot AmbInSnapshot;
+
+    public LayerMask enemyMask;
+    bool enemyNear;
+
+    private void Update()
+    {
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 5f, transform.forward, 0f, enemyMask);
+        if (hits.Length > 0)
+        {
+            if (!enemyNear)
+            {
+                AuxInSnapshot.TransitionTo(0.5f);
+                enemyNear = true;
+            }
+        }
+        else
+        {
+            if (enemyNear)
+            {
+                idleSnapshot.TransitionTo(0.5f);
+                enemyNear = false;
+            }
+        }
+    }
 
     private void onTriggerEnter(Collider other) 
     {
@@ -20,6 +46,10 @@ public class PlayerAudio : MonoBehaviour
         if(other.CompareTag("EnemyZone"))
         {
             AuxInSnapshot.TransitionTo(0.5f);
+        }
+        if(other.CompareTag("Ambience"))
+        {
+            AmbInSnapshot.TransitionTo(0.5f);
         }
     }
 
@@ -34,6 +64,10 @@ public class PlayerAudio : MonoBehaviour
         {
             idleSnapshot.TransitionTo(0.5f);
         }
+        if(other.CompareTag("Ambience"))
+        {
+            AmbidleSnapshot.TransitionTo(0.5f);
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -41,9 +75,4 @@ public class PlayerAudio : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
