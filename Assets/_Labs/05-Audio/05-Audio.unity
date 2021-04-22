@@ -562,6 +562,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5928254d43f8fbf42a6f677861652568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splashSound: {fileID: 8300000, guid: 68e64b24d907fdb47b0b36fac4227108, type: 3}
+  audioS: {fileID: 495634412}
+  idleSnapshot: {fileID: 24500006, guid: 9bed0047d33ea4a4a816522eba5b3acc, type: 2}
+  AuxInSnapshot: {fileID: -7193362232906186457, guid: 9bed0047d33ea4a4a816522eba5b3acc, type: 2}
+  AmbidleSnapshot: {fileID: 7365504944505075925, guid: e49b22c2c64ac0b40af6b62f65e65835, type: 2}
+  AmbInSnapshot: {fileID: 24500006, guid: e49b22c2c64ac0b40af6b62f65e65835, type: 2}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!82 &495634412 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82025755003314540, guid: dd51aa0141228c3478f60d3fe5ba00eb, type: 3}
+  m_PrefabInstance: {fileID: 1555911827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &495634415 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114112542000598322, guid: dd51aa0141228c3478f60d3fe5ba00eb, type: 3}
@@ -1023,6 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b164b83ff54df547adcb349d8f0ff20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventClip: {fileID: 0}
 --- !u!54 &1033077903
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1960,6 +1975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86ee468a40b94844a12fcc53ab1f7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMusicClip: {fileID: 8300000, guid: b824b703f619e424cbf03ec16bf0bcb7, type: 3}
+  auxMusicClip: {fileID: 8300000, guid: d6092572d074c094480c1bc7166180dc, type: 3}
 --- !u!1 &1437442453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,7 +2935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114106425073214990, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
       propertyPath: OnClickEnvironment.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114106425073214990, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
       propertyPath: OnClickEnvironment.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2931,7 +2948,7 @@ PrefabInstance:
     - target: {fileID: 114106425073214990, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
       propertyPath: OnClickEnvironment.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1884900727}
     - target: {fileID: 114106425073214990, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
       propertyPath: OnClickEnvironment.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -2945,9 +2962,17 @@ PrefabInstance:
       value: PlayClip
       objectReference: {fileID: 0}
     - target: {fileID: 114106425073214990, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
+      propertyPath: OnClickEnvironment.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MouseAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114106425073214990, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
       propertyPath: OnClickEnvironment.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 8300000, guid: 6e664e6db68218a4c8db6e040e897c6c, type: 3}
+    - target: {fileID: 114106425073214990, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
+      propertyPath: OnClickEnvironment.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 114106425073214990, guid: 4052bdf0c3f66bb4a8e22553843b139d, type: 3}
       propertyPath: OnClickEnvironment.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
@@ -3067,6 +3092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86dbfb3937eccf64c95946255ea5ab28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioS: {fileID: 1884900726}
 --- !u!1 &1897946356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,6 +3140,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6c4a5a54b090644833f0dc8ff0618a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMusic: {fileID: 1482395037}
+  auxMusic: {fileID: 1489056884}
+  ambSound: {fileID: 32579382}
+  eventMusic: {fileID: 1777424678}
+  eventSnap: {fileID: -5608108785811099850, guid: 9bed0047d33ea4a4a816522eba5b3acc, type: 2}
+  idleSnapshot: {fileID: 24500006, guid: 9bed0047d33ea4a4a816522eba5b3acc, type: 2}
+  eventRunning: 0
+  auxIn: 0
+  currentAudioMixerSnapshot: {fileID: 0}
 --- !u!1001 &1920332117
 PrefabInstance:
   m_ObjectHideFlags: 0
