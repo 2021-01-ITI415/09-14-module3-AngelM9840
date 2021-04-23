@@ -62,11 +62,11 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AmbIn
+  m_Name: AmbIdle
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 2338a304802d9664e8b1b6ef3186b919
   m_FloatValues:
-    2a4afdfc3a7eed340a111568f0646505: -0.037667945
+    2a4afdfc3a7eed340a111568f0646505: -80
   m_TransitionOverrides: {}
 --- !u!245 &7365504944505075925
 AudioMixerSnapshotController:
@@ -74,9 +74,9 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AmbIdle
+  m_Name: AmbIn
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 5ca616e0df0f3324d9d623a9d8db3227
   m_FloatValues:
-    2a4afdfc3a7eed340a111568f0646505: -80
+    2a4afdfc3a7eed340a111568f0646505: 0.23288241
   m_TransitionOverrides: {}
